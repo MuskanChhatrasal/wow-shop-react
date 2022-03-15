@@ -1,0 +1,25 @@
+:root {
+  --primary-light-color: #faf6e6;
+  --primary-vlight-color: #56f17dc0;
+  --primary-color: #000;
+  --primary-dark-color: #ac242c;
+  --primary-bg: #ffe900;
+
+  --faint-gray: #f1f5f7;
+  --light-gray: #e8f0f2;
+  --medium-blue-gray: #b2d1c9;
+  --dark-blue-gray: #92bdab;
+
+  --text-white: #fff;
+  --text-lighter: rgb(175, 175, 175);
+  --text-light: #666;
+  --text-dark: #000;
+  --text-gray-400: #656575;
+  --text-gray-100: #c6cbd9;
+  --color-gray-200: #9a9aaf;
+  --background-color: #eee;
+  --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  --border: 0.2rem solid rgba(0, 0, 0, 0.1);
+  --outline: 0.1rem solid rgba(0, 0, 0, 0.1);
+  --outline-hover: 0.2rem solid var(--primary-color);
+}
