@@ -3,7 +3,7 @@ import './products.css'
 import { products } from '../../backend/db/products'
 
 
-let flag = true;
+let exludeFlag = true;
 const reducer = (state, action) =>{
   switch(action.type){
     case 'EXCLUDE_NOT_AVAILABLE':
@@ -15,14 +15,14 @@ const reducer = (state, action) =>{
 
 
 const excludeNotAvailable = () =>{
-  flag = false;
+  exludeFlag = false;
   let updatedList;
   updatedList = products.filter((item)=>item.availableOrNot);
   return updatedList;
 }
 
 const includeNotAvailable = () =>{
-   flag = true;
+   exludeFlag = true;
    let updatedList;
    updatedList = products;
    return updatedList;
@@ -59,7 +59,9 @@ const Products = () => {
             </span>
             <span>
                 <label>
-                  <input type="checkbox" name="group1" onChange={()=>flag ? dispatch({type: 'EXCLUDE_NOT_AVAILABLE'}):dispatch({type: 'INCLUDE_NOT_AVAILABLE'})}/> <h3>Exclude Not Available</h3>
+                  <input type="checkbox" name="group1" 
+                  onChange={()=>exludeFlag ? dispatch({type: 'EXCLUDE_NOT_AVAILABLE'}):dispatch({type: 'INCLUDE_NOT_AVAILABLE'})}/> 
+                  <h3>Exclude Not Available</h3>
                 </label>
             </span>
             <span>
@@ -96,7 +98,7 @@ const Products = () => {
             <div className="box-container">
                 
                 {/* <!-- IMPORTED FROM MY COMPONENT LIBRARY --> */}
-                {flag ? products.map((item)=>{
+                {exludeFlag ? products.map((item)=>{
                   return (
                     <div className="card card-ecom mg-1-all" style={{marginTop: '1rem'}}>
                     <button class="btn secondary-text-btn-sm card-close"><i class="far fa-heart"></i></button>
