@@ -14,7 +14,7 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  width: 20%;
+  width: 95%;
   margin-top: 9rem;
   margin-left: -12rem;
   height: 82vh;
@@ -92,6 +92,24 @@ label h3 {
   background-color: var(--primary-dark-color);
   color: var(--text-white);
   border: none;
+}
+
+.card-close {
+  border: none;
+  margin-top: 0.25rem;
+  margin-right: -2rem;
+}
+
+.card-close:hover {
+  background-color: #fff4f8;
+  border: none;
+  color: var(--primary-dark-color);
+}
+
+.card-offer {
+  width: 8rem;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 a {
