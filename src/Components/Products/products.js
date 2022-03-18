@@ -91,7 +91,7 @@ const updatedProducts = () => {
                      <option value="Spanish">Spanish</option>
                      <option value="Italian">Italian</option>
                      <option value="South-Indian">South-Indian</option>
-                     <option value="North-Italian">North-Italian</option>
+                     <option value="North-Indian">North-Indian</option>
                   </select>
             </span>
             <label>
