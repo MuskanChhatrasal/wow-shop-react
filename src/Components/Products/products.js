@@ -9,6 +9,9 @@ const filterReducer = (state, action) =>{
       return {...state, excludeNotAvailable: !state.excludeNotAvailable}
     case 'ONLY_ITEMS_WITH_OFFER':
       return {...state, offerItems: !state.offerItems}
+    case 'CATEGORY':
+      console.log(action.payload)
+      return {...state, byCategory: action.payload}  
 
     case 'CLEAR_ALL_FILTERS': 
       return {excludeNotAvailable: false, offerItems: false, byRating: 0, byCategory: '', byPrice: 0}
@@ -23,7 +26,7 @@ const Products = () => {
  
 const updatedProducts = () => {
   let updatedProductList = products;
-  
+
   if(filterState.excludeNotAvailable){
     updatedProductList = updatedProductList.filter((item)=> item.availableOrNot)
     console.log(updatedProductList)
@@ -34,6 +37,14 @@ const updatedProducts = () => {
     console.log(updatedProductList)
   }
 
+  if(filterState.byCategory){
+    if(filterState.byCategory==='All'){
+      updatedProductList = products
+    }else{
+      updatedProductList = updatedProductList.filter((item)=>item.categoryName === filterState.byCategory)
+      console.log(updatedProductList)
+    }
+  }
   return updatedProductList;
 }
 
@@ -74,7 +85,8 @@ const updatedProducts = () => {
             </span>
             <span>
                <label style={{fontSize: '1.8rem'}}>Category: </label>
-                  <select style={{marginLeft: '1rem', width: '20rem'}}>
+                  <select style={{marginLeft: '1rem', width: '20rem'}} onChange={(e)=>filterDispatch({type: 'CATEGORY', payload: e.target.value})}>
+                     <option value="All">All</option>
                      <option value="Chineese">Chineese</option>
                      <option value="Spanish">Spanish</option>
                      <option value="Italian">Italian</option>
