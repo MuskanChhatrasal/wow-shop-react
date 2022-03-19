@@ -1,6 +1,8 @@
 import React from 'react'
 import { useFilter } from '../../Context/context'
 import './filter.css'
+// import Rating from '../../Components/Rating/rating'
+// import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 const Filter = () => {
   
@@ -55,7 +57,7 @@ const Filter = () => {
                   </select>
             </span>
             <label>
-                    <h3 className="filter-rating">Rating: </h3>
+                    <h3 className="filter-rating">Ratings: </h3>
                     <div className="filter-stars">
                          <i className="far fa-star"></i>
                         <i className="far fa-star"></i>
