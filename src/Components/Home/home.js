@@ -2,7 +2,11 @@ import React from 'react'
 import './home.css'
 import { Link } from 'react-router-dom'
 
+
+
+
 const Home = () => {
+
   return (
     <div>
       <section className="home" id="home">
@@ -15,8 +19,6 @@ const Home = () => {
         <a className="btn">shop now</a>
       </div>
     </section>
-
-
 
     
      <h1 className="heading"><span>Categories</span></h1>
@@ -36,15 +38,16 @@ const Home = () => {
       <div className="card category-card category-card5">
         <h3 className="card-title category-title">South-Indian </h3>
       </div>
+
+     
     </section>
 
 
     <section className="products" id="products">
        <Link to='/products'><p className="btn product-btn">View All</p></Link>
     </section>
-
     </div>
   )
 }
 
-export default Home
+export default Home;
