@@ -1,0 +1,53 @@
+.filters {
+  background-color: var(--primary-dark-color);
+  color: var(--text-white);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin: 9rem;
+  margin-left: -12rem;
+  height: 86vh;
+}
+
+.filters > span {
+  padding-bottom: 2rem;
+}
+
+.title {
+  font-size: 28px;
+}
+
+label {
+  font-size: 1.5rem;
+}
+
+label h3 {
+  margin-left: 2.5rem;
+  margin-top: -2.6rem;
+  font-weight: 300;
+}
+
+.filter-btn {
+  background-color: var(--text-white);
+  border: none;
+  color: var(--primary-dark-color);
+  margin-top: 14rem;
+}
+
+.filter-btn:hover {
+  background-color: var(--primary-light-color);
+  border: none;
+  color: var(--primary-color);
+}
+
+.filter-rating {
+  margin-left: 0rem;
+  margin-top: 2rem;
+}
+
+.filter-stars {
+  margin-left: 7rem;
+  margin-top: -2.4rem;
+  font-size: 1.2rem;
+}

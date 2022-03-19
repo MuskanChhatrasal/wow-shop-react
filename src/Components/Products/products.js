@@ -2,12 +2,14 @@ import React from 'react'
 import './products.css'
 import { products } from '../../backend/db/products'
 import { useFilter } from '../../Context/context'
+import Filter from '../../Pages/filter/filter'
 // import Rating from '../Rating/rating';
+import SingleProduct from '../../Pages/SingleProduct/singleProduct'
 
 
 const Products = () => {
 
-const {filterState, filterDispatch} = useFilter()
+const {filterState} = useFilter()
 
  
 const updatedProducts = () => {
@@ -57,106 +59,19 @@ const updatedProducts = () => {
   return (
     <div>
       <section className="main-container">
-        <div className="filters">
-            <span className="title">Filter Products</span>
-            <span>
-               <label style={{fontSize: '1.8rem'}}>Price: </label>
-                  <select style={{marginLeft: '1rem', width: '20rem'}} 
-                  onChange={(e)=>filterDispatch({type: 'SORT_BY_PRICE_RANGE', payload: e.target.value})}>
-                     <option value="All">All</option>
-                     <option value="Above 50 Below 100">Above 50 Below 100</option>
-                     <option value="Above 100 Below 200">Above 100 Below 200</option>
-                     <option value="Above 200 Below 300">Above 200 Below 300</option>
-                  </select>
-            </span>
-            <span>
-                <label>
-                  <input type="radio" name="group1" onChange={()=>filterDispatch({type: 'SORT_BY_PRICE', payload: 'lowToHigh'})} 
-                  checked={filterState.sort==='lowToHigh'?true:false} /> <h3>LOW TO HIGH</h3>
-                </label>
-            </span>
-            <span>
-                <label>
-                   <input type="radio" name="group1" onChange={()=>filterDispatch({type: 'SORT_BY_PRICE', payload: 'highToLow'})} 
-                   checked={filterState.sort==='highToLow' ? true:false} /> 
-                   <h3>HIGH TO LOW</h3>
-                </label>
-            </span>
-            <span>
-                <label>
-                  <input type="checkbox" name="group1"  onChange={()=>filterDispatch({type: 'EXCLUDE_NOT_AVAILABLE'})} checked={filterState.excludeNotAvailable} /> 
-                  <h3>Exclude Not Available</h3>
-                </label>
-            </span>
-            <span>
-                <label>
-                  <input type="checkbox" name="group1" onChange={()=>filterDispatch({type: 'ONLY_ITEMS_WITH_OFFER'})} checked={filterState.offerItems} /> <h3>Item With Offers Only</h3>
-                </label>
-            </span>
-            <span>
-               <label style={{fontSize: '1.8rem'}}>Category: </label>
-                  <select style={{marginLeft: '1rem', width: '20rem'}} onChange={(e)=>filterDispatch({type: 'CATEGORY', payload: e.target.value})}>
-                     <option value="All">All</option>
-                     <option value="Chineese">Chineese</option>
-                     <option value="Spanish">Spanish</option>
-                     <option value="Italian">Italian</option>
-                     <option value="South-Indian">South-Indian</option>
-                     <option value="North-Indian">North-Indian</option>
-                  </select>
-            </span>
-            <label>
-                    <h3 className="filter-rating">Rating: </h3>
-                    <div className="filter-stars">
-                         <i className="far fa-star"></i>
-                        <i className="far fa-star"></i>
-                        <i className="far fa-star"></i>
-                        <i className="far fa-star"></i>
-                        <i className="far fa-star"></i> 
-                        {/* <Rating rating={filterState.byRating} onClick={(i) => filterDispatch({type: 'FILTER_BY_RATING', payload: i+1})}  style={{cursor: 'pointer'}} /> */}
-                    </div>
-            </label>
-            <button className="btn filter-btn" onClick={()=>filterDispatch({type: 'CLEAR_ALL_FILTERS'})}>Clear Filters</button>
-        </div>
+        <Filter />
 
         <section className="categories" id="categories">
-    
-        
             <div className="box-container">
-                
-                {/* <!-- IMPORTED FROM MY COMPONENT LIBRARY --> */}
                 {updatedProducts().map((item)=>{
                   return (
-                    <div className="card card-ecom mg-1-all" style={{marginTop: '1rem'}}>
-                    <button class="btn secondary-text-btn-sm card-close"><i class="far fa-heart"></i></button>
-                    <div className="card-img-cont">
-                        <img className="card-img" src={item.imageUrl}
-                            alt="veg-momos" />
-                    </div>
-                    {item.offer && <div className="card-badge card-offer">{item.offerOFF} OFF</div>}
-                    <div className="card-body">
-                        <div className="card-header">
-                            <h6 className="card-title">{item.title}</h6>
-                            <p className="card-desc">{item.categoryName}</p>
-                            <div className="card-price">
-                                <span className="price-new" style={{fontSize: '1.25rem'}}>Rs.{item.priceNew}</span>
-                                {item.offer && <span className="price-old" style={{fontSize: '1.25rem'}}>Rs.{item.priceOld}</span>}
-                                {item.offer && <span className="discount" style={{fontSize: '1.25rem'}}>{item.offerOFF}</span>}
-                            </div>
-                        </div>
-                        <div className="card-footer">
-                            <button className="button btn-primary card-button">ADD TO CART</button>
-                        </div>
-                    </div>
-                </div>
+                    <SingleProduct item={item}/>
                   )
                 })}   
             </div>
         
         </section>
-        
-        {/* <!-- categories section ends --> */}
-
-    </section>
+      </section>
     </div>
   )
 }

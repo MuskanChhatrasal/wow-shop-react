@@ -116,4 +116,26 @@ export const products = [
     offer: false,
     imageUrl: 'https://d4t7t8y8xqo0t.cloudfront.net/admin/eazymedia/trends/3091/16164196070.jpg'
   },
+  {
+    _id: uuid(),
+    title: "Chineese-Platter",
+    availableOrNot: true,
+    priceOld: 250,
+    priceNew: 150,
+    offerOFF: "50%",
+    categoryName: "Chineese",
+    offer: true,
+    imageUrl: 'https://res.cloudinary.com/purnesh/image/upload/w_1080,f_auto/golden-fiesta-h.jpg'
+  },
+  {
+    _id: uuid(),
+    title: "Burger-Combo",
+    availableOrNot: true,
+    priceOld: 200,
+    priceNew: 150,
+    offerOFF: "25%",
+    categoryName: "Italian",
+    offer: true,
+    imageUrl: 'https://hotgrillburger.com/wp-content/uploads/2021/05/01_0007_VEG-BURGER-COMBO-MEAL-3.jpg'
+  },
 ];
