@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useFilter } from '../../Context/context'
 import './singleProduct.css'
 
@@ -9,9 +9,7 @@ const SingleProduct = ({item}) => {
 
     {/* <!-- IMPORTED FROM MY COMPONENT LIBRARY --> */}
 
-    // useEffect(()=>{
-    //   console.log(cartState.cart)
-    // }, [cartState.cart])
+   
   return (
 
     <div className="card card-ecom mg-1-all" style={{marginTop: '1rem'}}>
