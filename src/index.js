@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { makeServer } from "./server";
 import {BrowserRouter} from 'react-router-dom'
-import { FilterProvider } from "./Context/context";
+import { Provider } from "./Context/context";
 
 
 // Call make Server
@@ -11,11 +11,11 @@ makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-  <FilterProvider>
+  <Provider>
   <BrowserRouter>
     <App />
   </BrowserRouter>
-  </FilterProvider>
+  </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

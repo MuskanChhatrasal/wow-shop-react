@@ -45,7 +45,7 @@ const Filter = () => {
             </span>
             <span>
                <label style={{fontSize: '1.8rem'}}>Category: </label>
-                  <select style={{marginLeft: '1rem', width: '20rem'}} onChange={(e)=>filterDispatch({type: 'CATEGORY', payload: e.target.value})}>
+                  <select style={{marginLeft: '1rem', width: '15rem'}} onChange={(e)=>filterDispatch({type: 'CATEGORY', payload: e.target.value})}>
                      <option value="All">All</option>
                      <option value="Chineese">Chineese</option>
                      <option value="Spanish">Spanish</option>

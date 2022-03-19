@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useFilter } from '../../Context/context'
 import './singleProduct.css'
 
 
 const SingleProduct = ({item}) => {
+
+    const {cartState, cartDispatch} = useFilter()
+
     {/* <!-- IMPORTED FROM MY COMPONENT LIBRARY --> */}
+
+    // useEffect(()=>{
+    //   console.log(cartState.cart)
+    // }, [cartState.cart])
   return (
 
     <div className="card card-ecom mg-1-all" style={{marginTop: '1rem'}}>
@@ -24,7 +32,7 @@ const SingleProduct = ({item}) => {
                             </div>
                         </div>
                         <div className="card-footer">
-                            <button className="button btn-primary card-button">ADD TO CART</button>
+                            <button className="button btn-primary card-button" onClick={()=>cartDispatch({type: 'ADD_TO_CART', payload: item})}>ADD TO CART</button>
                         </div>
                     </div>
                 </div>
