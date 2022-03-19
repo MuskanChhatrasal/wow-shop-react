@@ -11,17 +11,23 @@ const filterReducer = (state, action) =>{
       return {...state, offerItems: !state.offerItems}
     case 'CATEGORY':
       console.log(action.payload)
-      return {...state, byCategory: action.payload}  
+      return {...state, byCategory: action.payload}
+    case 'SORT_BY_PRICE':
+      return {...state, sort: action.payload}
+    case 'SORT_BY_PRICE_RANGE':
+      return {...state, byPrice: action.payload}
+    // case 'FILTER_BY_RATING':
+    //   return {...state, byRating: action.payload}
 
     case 'CLEAR_ALL_FILTERS': 
-      return {excludeNotAvailable: false, offerItems: false, byRating: 0, byCategory: '', byPrice: 0}
+      return {excludeNotAvailable: false, offerItems: false, byRating: 0, byCategory: '', byPrice: 0, sort: ''}
   }
 }
 
 
 const Products = () => {
 
- const [filterState, filterDispatch] = useReducer(filterReducer, {excludeNotAvailable: false, offerItems: false, byRating: 0, byCategory: '', byPrice: 0})
+ const [filterState, filterDispatch] = useReducer(filterReducer, {excludeNotAvailable: false, offerItems: false, byRating: 0, byCategory: '', byPrice: 0, sort: ''})
 
  
 const updatedProducts = () => {
@@ -45,6 +51,25 @@ const updatedProducts = () => {
       console.log(updatedProductList)
     }
   }
+
+  if(filterState.byPrice){
+    if(filterState.byPrice==='All'){
+      updatedProductList=products
+    }else if(filterState.byPrice==="Above 50 Below 100"){
+      updatedProductList = updatedProductList.filter((item)=>item.priceNew >= 50 &&  item.priceNew < 100)
+    }else if(filterState.byPrice==="Above 100 Below 200"){
+      updatedProductList = updatedProductList.filter((item)=>item.priceNew >= 100 &&  item.priceNew < 200)
+    }else if(filterState.byPrice==="Above 200 Below 300"){
+      updatedProductList = updatedProductList.filter((item)=>item.priceNew >= 200 &&  item.priceNew < 300)
+    }
+  }
+
+  if(filterState.sort){
+    updatedProductList = updatedProductList.sort((a,b) =>
+      filterState.sort === 'lowToHigh' ? a.priceNew - b.priceNew : b.priceNew - a.priceNew
+    )
+    console.log(updatedProductList)
+  }
   return updatedProductList;
 }
 
@@ -55,20 +80,25 @@ const updatedProducts = () => {
         <div className="filters">
             <span className="title">Filter Products</span>
             <span>
-              <label  className="form-label"><h2>Price: </h2></label>
-              <br />
-
-              {/* <!-- IMPORTED FROM MY COMPONENT LIBRARY  --> */}
-             <input type="range" min="1" max="100" value="50" style={{width: '20rem'}} />
+               <label style={{fontSize: '1.8rem'}}>Price: </label>
+                  <select style={{marginLeft: '1rem', width: '20rem'}} 
+                  onChange={(e)=>filterDispatch({type: 'SORT_BY_PRICE_RANGE', payload: e.target.value})}>
+                     <option value="All">All</option>
+                     <option value="Above 50 Below 100">Above 50 Below 100</option>
+                     <option value="Above 100 Below 200">Above 100 Below 200</option>
+                     <option value="Above 200 Below 300">Above 200 Below 300</option>
+                  </select>
             </span>
             <span>
                 <label>
-                  <input type="radio" name="group1" /> <h3>LOW TO HIGH</h3>
+                  <input type="radio" name="group1" onChange={()=>filterDispatch({type: 'SORT_BY_PRICE', payload: 'lowToHigh'})} 
+                  checked={filterState.sort==='lowToHigh'?true:false} /> <h3>LOW TO HIGH</h3>
                 </label>
             </span>
             <span>
                 <label>
-                   <input type="radio" name="group1" /> 
+                   <input type="radio" name="group1" onChange={()=>filterDispatch({type: 'SORT_BY_PRICE', payload: 'highToLow'})} 
+                   checked={filterState.sort==='highToLow' ? true:false} /> 
                    <h3>HIGH TO LOW</h3>
                 </label>
             </span>
@@ -102,7 +132,7 @@ const updatedProducts = () => {
                         <i className="far fa-star"></i>
                         <i className="far fa-star"></i>
                         <i className="far fa-star"></i> 
-                        
+                        {/* <Rating rating={filterState.byRating} onClick={(i) => filterDispatch({type: 'FILTER_BY_RATING', payload: i+1})}  style={{cursor: 'pointer'}} /> */}
                     </div>
             </label>
             <button className="btn filter-btn" onClick={()=>filterDispatch({type: 'CLEAR_ALL_FILTERS'})}>Clear Filters</button>
