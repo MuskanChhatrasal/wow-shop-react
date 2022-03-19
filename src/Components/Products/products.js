@@ -1,33 +1,13 @@
-import React, {useReducer} from 'react'
+import React from 'react'
 import './products.css'
 import { products } from '../../backend/db/products'
+import { useFilter } from '../../Context/context'
 // import Rating from '../Rating/rating';
-
-const filterReducer = (state, action) =>{
-  switch(action.type){
-    case 'EXCLUDE_NOT_AVAILABLE':
-      return {...state, excludeNotAvailable: !state.excludeNotAvailable}
-    case 'ONLY_ITEMS_WITH_OFFER':
-      return {...state, offerItems: !state.offerItems}
-    case 'CATEGORY':
-      console.log(action.payload)
-      return {...state, byCategory: action.payload}
-    case 'SORT_BY_PRICE':
-      return {...state, sort: action.payload}
-    case 'SORT_BY_PRICE_RANGE':
-      return {...state, byPrice: action.payload}
-    // case 'FILTER_BY_RATING':
-    //   return {...state, byRating: action.payload}
-
-    case 'CLEAR_ALL_FILTERS': 
-      return {excludeNotAvailable: false, offerItems: false, byRating: 0, byCategory: '', byPrice: 0, sort: ''}
-  }
-}
 
 
 const Products = () => {
 
- const [filterState, filterDispatch] = useReducer(filterReducer, {excludeNotAvailable: false, offerItems: false, byRating: 0, byCategory: '', byPrice: 0, sort: ''})
+const {filterState, filterDispatch} = useFilter()
 
  
 const updatedProducts = () => {
