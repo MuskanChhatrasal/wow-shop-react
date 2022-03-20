@@ -12,10 +12,11 @@ const SingleProduct = ({item}) => {
    
   return (
 
-    <div className="card card-ecom mg-1-all" style={{marginTop: '1rem'}}>
+            <div  className= {item.availableOrNot ? "card card-ecom mg-1-all":"card card-ecom mg-1-all not-available"} style={{marginTop: '1rem'}} >
+                    {!item.availableOrNot && <h3 className='not-availableHead'>Not Available</h3>}
                     <button class="btn secondary-text-btn-sm card-close"><i class="far fa-heart"></i></button>
                     <div className="card-img-cont">
-                        <img className="card-img" src={item.imageUrl}
+                        <img className= {item.availableOrNot ? "card-img" : "card-img not-availableImg" } src={item.imageUrl}
                             alt="veg-momos" />
                     </div>
                     {item.offer && <div className="card-badge card-offer">{item.offerOFF} OFF</div>}
@@ -30,7 +31,7 @@ const SingleProduct = ({item}) => {
                             </div>
                         </div>
                         <div className="card-footer">
-                            <button className="button btn-primary card-button" onClick={()=>cartDispatch({type: 'ADD_TO_CART', payload: item})}>ADD TO CART</button>
+                            <button className= {item.availableOrNot ? "button btn-primary card-button" : "button btn-primary card-button btn-disabled"}   onClick={()=>cartDispatch({type: 'ADD_TO_CART', payload: item})}>ADD TO CART</button>
                         </div>
                     </div>
                 </div>

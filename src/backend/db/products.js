@@ -117,7 +117,7 @@ export const products = [
   {
     _id: uuid(),
     title: "Masala-Dosa",
-    availableOrNot: true,
+    availableOrNot: false,
     priceOld: 70,
     priceNew: 70,
     offerOFF: "0",

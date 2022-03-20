@@ -1,8 +1,7 @@
 import React from 'react'
 import { useFilter } from '../../Context/context'
 import './filter.css'
-// import Rating from '../../Components/Rating/rating'
-// import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+
 
 const Filter = () => {
   
@@ -58,13 +57,6 @@ const Filter = () => {
             </span>
             <label>
                     <h4 className="filter-heading">Ratings </h4>
-                    {/* <div className="filter-stars">
-                         <i className="far fa-star"></i>
-                        <i className="far fa-star"></i>
-                        <i className="far fa-star"></i>
-                        <i className="far fa-star"></i>
-                        <i className="far fa-star"></i> 
-                    </div> */}
                     <span>
                       <label>
                         <input type="radio" name="group2" onChange={()=>filterDispatch({type: 'FILTER_BY_RATING', payload: '4StarAndAbove'})} 
