@@ -91,7 +91,16 @@
   background: var(--primary-dark-color);
   color: var(--text-white);
 }
-
+.loginButton {
+  margin-left: 2rem;
+  padding: 1.15rem 2rem;
+  font-size: 1.5rem;
+  color: var(--primary-dark-color);
+}
+.loginButton:hover {
+  color: var(--text-white);
+  background-color: var(--primary-dark-color);
+}
 #menu-btn {
   display: none;
 }

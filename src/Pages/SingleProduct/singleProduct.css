@@ -1,0 +1,76 @@
+.categories .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 7.5rem;
+  width: 130%;
+  gap: 2.5rem;
+  margin-left: -10rem;
+  justify-content: space-around;
+}
+
+.card-button {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  font-size: 1.4rem;
+  border-radius: 0.5rem;
+  border: 0.2rem solid var(--primary-color);
+  cursor: pointer;
+  background-color: var(--primary-dark-color);
+  color: var(--text-white);
+  border: none;
+  margin-left: 0.2rem;
+}
+
+.card-button:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+  background-color: var(--primary-dark-color);
+  color: var(--text-white);
+  border: none;
+}
+
+.card-close {
+  border: none;
+  margin-top: 0.25rem;
+  margin-right: -2rem;
+}
+
+.card-close:hover {
+  background-color: #fff4f8;
+  border: none;
+  color: var(--primary-dark-color);
+}
+
+.card-offer {
+  padding: 0.2rem !important;
+  width: 8rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.not-available {
+  position: relative;
+  color: rgba(220, 220, 220, 0.966);
+}
+
+.not-availableImg {
+  opacity: 0.5;
+}
+
+.not-availableHead {
+  position: absolute;
+  top: 14rem;
+  left: 20%;
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.btn-disabled {
+  background-color: var(--background-color);
+  color: var(--text-gray-100);
+}
+.btn-disabled:hover {
+  background-color: var(--background-color);
+  color: var(--text-gray-100);
+}

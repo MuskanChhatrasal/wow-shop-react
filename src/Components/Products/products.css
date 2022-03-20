@@ -1,0 +1,13 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+@import url("https://wow-ui02.netlify.app/components/Card.css");
+@import url("https://wow-ui02.netlify.app/components/Slider.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1.05fr 3fr;
+}
+
+a {
+  text-decoration: none;
+}
