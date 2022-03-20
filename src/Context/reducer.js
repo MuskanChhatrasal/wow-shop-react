@@ -12,8 +12,8 @@ export const filterReducer = (state, action) =>{
       return {...state, sort: action.payload}
     case 'SORT_BY_PRICE_RANGE':
       return {...state, byPrice: action.payload}
-    // case 'FILTER_BY_RATING':
-    //   return {...state, byRating: action.payload}
+    case 'FILTER_BY_RATING':
+      return {...state, byRating: action.payload}
 
     case 'CLEAR_ALL_FILTERS': 
       return {excludeNotAvailable: false, offerItems: false, byRating: 0, byCategory: '', byPrice: 0, sort: ''}

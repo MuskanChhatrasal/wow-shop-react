@@ -7,7 +7,7 @@ const Context = createContext();
 
 const Provider = ({children}) =>{
     
-    const [filterState, filterDispatch] = useReducer(filterReducer, {excludeNotAvailable: false, offerItems: false, byRating: 0, byCategory: '', byPrice: 0, sort: ''})
+    const [filterState, filterDispatch] = useReducer(filterReducer, {excludeNotAvailable: false, offerItems: false, byRating: '', byCategory: '', byPrice: 0, sort: ''})
     const [cartState, cartDispatch] = useReducer(cartReducer, {products: products, cart: []})
 
     return(

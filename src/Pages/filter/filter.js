@@ -57,15 +57,42 @@ const Filter = () => {
                   </select>
             </span>
             <label>
-                    <h3 className="filter-rating">Ratings: </h3>
-                    <div className="filter-stars">
+                    <h4 className="filter-heading">Ratings </h4>
+                    {/* <div className="filter-stars">
                          <i className="far fa-star"></i>
                         <i className="far fa-star"></i>
                         <i className="far fa-star"></i>
                         <i className="far fa-star"></i>
                         <i className="far fa-star"></i> 
-                        {/* <Rating rating={filterState.byRating} onClick={(i) => filterDispatch({type: 'FILTER_BY_RATING', payload: i+1})}  style={{cursor: 'pointer'}} /> */}
-                    </div>
+                    </div> */}
+                    <span>
+                      <label>
+                        <input type="radio" name="group2" onChange={()=>filterDispatch({type: 'FILTER_BY_RATING', payload: '4StarAndAbove'})} 
+                        checked={filterState.byRating==='4StarAndAbove' ? true:false} /> 
+                        <p style={{marginLeft: '2rem', marginTop: '-2.3rem'}} >4 Star and Above</p>
+                      </label>
+                    </span>
+                    <span>
+                      <label>
+                        <input type="radio" name="group2" onChange={()=>filterDispatch({type: 'FILTER_BY_RATING', payload: '3StarAndAbove'})} 
+                        checked={filterState.byRating === '3StarAndAbove' ? true:false} /> 
+                        <p style={{marginLeft: '2rem', marginTop: '-2.3rem'}}>3 Star and Above</p>
+                      </label>
+                    </span>
+                    <span>
+                      <label>
+                        <input type="radio" name="group2" onChange={()=>filterDispatch({type: 'FILTER_BY_RATING', payload: '2StarAndAbove'})} 
+                        checked={filterState.byRating === '2StarAndAbove' ? true:false} /> 
+                        <p style={{marginLeft: '2rem', marginTop: '-2.3rem'}}>2 Star and Above</p>
+                      </label>
+                    </span>
+                    <span>
+                      <label>
+                        <input type="radio" name="group2" onChange={()=>filterDispatch({type: 'FILTER_BY_RATING', payload: '1StarAndAbove'})} 
+                        checked={filterState.byRating === '1StarAndAbove' ? true:false} /> 
+                        <p style={{marginLeft: '2rem', marginTop: '-2.3rem'}}>1 Star and Above</p>
+                      </label>
+                    </span>
             </label>
             <button className="btn filter-btn" onClick={()=>filterDispatch({type: 'CLEAR_ALL_FILTERS'})}>Clear Filters</button>
         </div>

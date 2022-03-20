@@ -52,6 +52,17 @@ const updatedProducts = () => {
     )
     console.log(updatedProductList)
   }
+  if(filterState.byRating){
+    if(filterState.byRating === '4StarAndAbove'){
+      updatedProductList = updatedProductList.filter((item)=>item.rating>=4)
+    }else if(filterState.byRating === '3StarAndAbove'){
+      updatedProductList = updatedProductList.filter((item)=>item.rating>=3)
+    }else if(filterState.byRating === '2StarAndAbove'){
+      updatedProductList = updatedProductList.filter((item)=>item.rating>=2)
+    }else{
+      updatedProductList = updatedProductList.filter((item)=>item.rating>=1)
+    }
+  }
   return updatedProductList;
 }
 
