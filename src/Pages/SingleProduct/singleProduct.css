@@ -73,3 +73,7 @@
   background-color: var(--background-color);
   color: var(--text-gray-100);
 }
+.btn-disabled:hover {
+  background-color: var(--background-color);
+  color: var(--text-gray-100);
+}
