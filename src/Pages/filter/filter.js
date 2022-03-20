@@ -12,7 +12,7 @@ const Filter = () => {
             <span className="title">Filter Products</span>
             <span>
                <label style={{fontSize: '1.8rem'}}>Price: </label>
-                  <select style={{marginLeft: '1rem', width: '20rem'}} 
+                  <select style={{marginLeft: '1rem', width: '15rem'}} 
                   onChange={(e)=>filterDispatch({type: 'SORT_BY_PRICE_RANGE', payload: e.target.value})}>
                      <option value="All">All</option>
                      <option value="Above 50 Below 100">Above 50 Below 100</option>
