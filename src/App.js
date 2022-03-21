@@ -7,6 +7,8 @@ import Footer from '../src/Components/Footer/footer'
 import Cart from '../src/Components/Cart/cart'
 import Wishlist from '../src/Components/Wishlist/wishlist'
 import Mockman from "mockman-js";
+import Login from "./Components/Authentication/login";
+import Signup from "./Components/Authentication/signup";
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
       <Route path="/cart" element={<Cart />} />
       <Route path="/wishlist" element={<Wishlist />}/>
       <Route path="/mockman" element={<Mockman />} />
+      <Route path="/login" element={<Login />}/>
+      <Route path="/signup" element={<Signup />}/>
     </Routes>
     <Footer />
     </>
