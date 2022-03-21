@@ -6,6 +6,7 @@ import Products from '../src/Components/Products/products'
 import Footer from '../src/Components/Footer/footer'
 import Cart from '../src/Components/Cart/cart'
 import Wishlist from '../src/Components/Wishlist/wishlist'
+import Mockman from "mockman-js";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Route path="/products" element={<Products />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/wishlist" element={<Wishlist />}/>
+      <Route path="/mockman" element={<Mockman />} />
     </Routes>
     <Footer />
     </>

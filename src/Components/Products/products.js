@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './products.css'
 import { products } from '../../backend/db/products'
 import { useFilter } from '../../Context/context'
@@ -7,9 +7,11 @@ import Filter from '../../Pages/filter/filter'
 import SingleProduct from '../../Pages/SingleProduct/singleProduct'
 
 
+
 const Products = () => {
 
 const {filterState} = useFilter()
+
 
  
 const updatedProducts = () => {
@@ -88,3 +90,23 @@ const updatedProducts = () => {
 }
 
 export default Products
+
+
+
+// import { useState, useEffect } from 'react'
+// import ProductCard from './ProductCard'
+// import axios from 'axios';
+// import "./products.css";
+
+
+// const url = "/api/products";
+// const Products = () => {
+// 	const [products, setProducts] = useState([]);
+
+// 	useEffect(() => {
+// 		axios.get(url).then(res => {
+// 			const { data } = res;
+// 			setProducts(data);
+// 			console.log("response:", data.products)
+// 		})
+// 	}, [])
