@@ -2,7 +2,7 @@
 
 .wrapper {
   max-width: 40rem;
-  margin-top: 8rem;
+  margin-top: 15rem;
   margin-bottom: 2rem;
   margin-left: 50rem;
   align-items: center;
@@ -85,4 +85,30 @@ form .text h3 a {
 
 form .text h3 a:hover {
   text-decoration: underline;
+}
+
+.input-icons i {
+  position: absolute;
+}
+.input-icons {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.icon {
+  padding: 10px;
+  min-width: 40px;
+  margin-left: 31rem;
+  margin-top: 0.5rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+}
+
+.error-text {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--primary-dark-color);
 }
