@@ -36,20 +36,11 @@ const Navbar = () => {
         <Link to='/login'><i class="fas fa-user-circle profile-icon" style={{fontSize: '3rem'}}></i></Link>
         <span className='userName'>{userName}</span>
         <Link to='/cart'><div className="fas fa-shopping-cart" id="cart-btn" style={{position: 'relative'}}>
-        <span style={{position: 'absolute', top: -20, right: 0, fontSize: '1.5rem'}}>{cartQuantity}</span>
+          <span style={{position: 'absolute', top: -20, right: 0, fontSize: '1.5rem'}}>{cartQuantity}</span>
         </div></Link>
-        {/* <div className="fas fa-user" id="login-btn">
-        </div> */}
-        {/* <li className={`${loggedIn ? "loggedIn" : "loggedNotDispaly" }`}>
-                    <Link className="login" to="/login">
-                       <i class="fas fa-sign-out-alt logout-icon" onClick={()=> logout()}></i>
-                    </Link>
-                    <span className="logout-txt">LogOut</span>
-                </li> */}
-
-              <Link to='/login'><i className="fas fa-sign-out-alt" id= {loggedIn ? "logout-btn":'logoutNotDisplay'}  style={{position: 'relative'}}>
-              <span style={{position: 'absolute', marginTop: '4rem', marginLeft: '-4rem', fontSize: '1.25rem'}} className='logout-txt'>logOut</span>
-              </i></Link>
+        <Link to='/login'><i className="fas fa-sign-out-alt" id= {loggedIn ? "logout-btn":'logoutNotDisplay'}  style={{position: 'relative'}}>
+          <span style={{position: 'absolute', marginTop: '4rem', marginLeft: '-4rem', fontSize: '1.25rem'}} className='logout-txt'>logOut</span>
+        </i></Link>
       </div>
     </header>
     </div>
