@@ -4,7 +4,7 @@ import { useAuth } from '../../Context/AuthContext/authContext'
 import './authentication.css'
 
 const Signup = () => {
-  const [userDetails, setUserDetails] = useState({fullName: '',email: '', password: '', confirmPassword: '', terms: false})
+  const [userDetails, setUserDetails] = useState({firstName: '',lastName: '',email: '', password: '', confirmPassword: '', terms: false})
   const [toggleShowPassword, setToggleShowPassword] = useState(true)
   const [toggleShowConfirmPass, setToggleShowConfirmPass] = useState(true)
   const [error, setError] = useState({isError: false, text: ''})
@@ -26,7 +26,7 @@ const Signup = () => {
       e.preventDefault()
       const passwordValidation = /^(?=.*\d)(?=.*[a-z]).{5,10}$/;
 
-      if(!userDetails.fullName || !userDetails.email || !userDetails.password || !userDetails.confirmPassword || !userDetails.terms){
+      if(!userDetails.firstName || !userDetails.lastName || !userDetails.email || !userDetails.password || !userDetails.confirmPassword || !userDetails.terms){
          setError({isError: true, text: 'Please Enter all the Fields!!'})
       }
 
@@ -46,7 +46,7 @@ const Signup = () => {
           setError({isError: true, text: 'Please accept terms and conditions!!'})
       }else{
           signup(userDetails)
-          setUserDetails({fullName: '', email: '', password: '', confirmPassword: '', terms: false})
+          setUserDetails({firstName: '', lastName: '', email: '', password: '', confirmPassword: '', terms: false})
       }
   }
   return (
@@ -55,7 +55,10 @@ const Signup = () => {
         <h2>Sign-Up</h2>
         <form>
             <div className="input-box">
-                <input type="text" placeholder="Enter your name" name='fullname' id='name' value={userDetails.fullName} onChange={(e)=>setUserDetails({...userDetails, fullName: e.target.value})} />
+                <input type="text" placeholder="Enter your First name" name='firstName' id='name' value={userDetails.fullName} onChange={(e)=>setUserDetails({...userDetails, firstName: e.target.value})} />
+            </div>
+            <div className="input-box">
+                <input type="text" placeholder="Enter your last name" name='lastName'  value={userDetails.fullName} onChange={(e)=>setUserDetails({...userDetails, lastName: e.target.value})} />
             </div>
             <div className="input-box">
             
