@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useAuth } from '../../Context/AuthContext/authContext'
 import './authentication.css'
 
 const Signup = () => {
@@ -7,6 +8,10 @@ const Signup = () => {
   const [toggleShowPassword, setToggleShowPassword] = useState(true)
   const [toggleShowConfirmPass, setToggleShowConfirmPass] = useState(true)
   const [error, setError] = useState({isError: false, text: ''})
+
+
+ 
+  const {signup} = useAuth();
 
   useEffect(()=>{
       const timeoutId = setTimeout(()=>{
@@ -17,8 +22,8 @@ const Signup = () => {
   },[error])
 
 
-  const submitHandler = () =>{
-    //   e.preventDefault()
+  const submitHandler = (e) =>{
+      e.preventDefault()
       const passwordValidation = /^(?=.*\d)(?=.*[a-z]).{5,10}$/;
 
       if(!userDetails.fullName || !userDetails.email || !userDetails.password || !userDetails.confirmPassword || !userDetails.terms){
@@ -40,6 +45,7 @@ const Signup = () => {
       else if(!userDetails.terms){
           setError({isError: true, text: 'Please accept terms and conditions!!'})
       }else{
+          signup(userDetails)
           setUserDetails({fullName: '', email: '', password: '', confirmPassword: '', terms: false})
       }
   }
@@ -47,7 +53,7 @@ const Signup = () => {
     <div className="wrapper">
     {error && <p className='error-text'>{error.text}</p>}
         <h2>Sign-Up</h2>
-        <form action="#">
+        <form>
             <div className="input-box">
                 <input type="text" placeholder="Enter your name" name='fullname' id='name' value={userDetails.fullName} onChange={(e)=>setUserDetails({...userDetails, fullName: e.target.value})} />
             </div>
@@ -69,7 +75,7 @@ const Signup = () => {
                 <h3>I accept all terms & condition</h3>
             </div>
             <div className="input-box button">
-                <input type="Submit" value="Register Now" onClick={()=>submitHandler()} />
+                <input type="Submit" value="Register Now" onClick={(e)=>submitHandler(e)} />
             </div>
             <div className="text">
                 <h3>Already have an account? <Link to='/login'>Login now</Link></h3>
@@ -80,3 +86,4 @@ const Signup = () => {
 }
 
 export default Signup
+

@@ -34,7 +34,7 @@ const Navbar = () => {
         <Link to='/cart'><div className="fas fa-shopping-cart" id="cart-btn" style={{position: 'relative'}}>
         <span style={{position: 'absolute', top: -20, right: 0, fontSize: '1.5rem'}}>{cartQuantity}</span>
         </div></Link>
-        <button className='loginButton'>Login In</button>
+        <Link to='/login'><button className='loginButton'>Login In</button></Link>
         {/* <div className="fas fa-user" id="login-btn">
         </div> */}
       </div>
