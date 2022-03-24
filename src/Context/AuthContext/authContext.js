@@ -27,13 +27,14 @@ const AuthProvider = ({children}) =>{
         console.log('hello')
       try {
           const response = await axios.post('/api/auth/signup', {
-              fullName: userDetails.fullName,
+              firstName: userDetails.firstName,
+              lastName: userDetails.lastName,
               email: userDetails.email,
               password: userDetails.password
           })
           console.log(response)
           localStorage.setItem('token', response.data.encodedToken)
-          authDispatch({type: 'SUCCESS_TOAST', payload: {name: response.data.createdUser.fullName, toastMessage: 'Signed Up', id: response.data.createdUser._id}})
+          authDispatch({type: 'SUCCESS_TOAST', payload: {name: response.data.createdUser.firstName, toastMessage: 'Signed Up', id: response.data.createdUser._id}})
       } catch (error) {
           console.log(error)
       }
@@ -47,7 +48,7 @@ const AuthProvider = ({children}) =>{
             })
             
             localStorage.setItem('token', response.data.encodedToken)
-            authReducer({type: 'SUCCESS_TOAST', payload: {name: response.data.foundUser.fullName, toastMessage: 'Loged In', id: response.data.foundUser._id}})
+            authReducer({type: 'SUCCESS_TOAST', payload: {name: response.data.foundUser.firstName, toastMessage: 'Loged In', id: response.data.foundUser._id}})
         } catch (error) {
             console.log(error)
         }
@@ -61,13 +62,18 @@ const AuthProvider = ({children}) =>{
                 password: 'testLogin@123'
             })
             console.log(response)
-            authDispatch({type: 'TEST_TOAST', payload: {name: response.data.foundUser.fullName, toastMessage: 'Logid In', id: response.data.foundUser._id}})
+            authDispatch({type: 'TEST_TOAST', payload: {name: response.data.foundUser.firstName, toastMessage: 'Logid In', id: response.data.foundUser._id}})
         } catch (error) {
             console.log(error)
         }
     }
+
+    const logout = () =>{
+        localStorage.clear();
+        authDispatch({type: 'LOGOUT', payload: {toastMessage: 'Logged Out', id: ''}})
+    }
     return (
-        <AuthContext.Provider value={{authState, authDispatch, signup, login, testLogin}}>
+        <AuthContext.Provider value={{authState, authDispatch, signup, login, testLogin, logout}}>
             {children}
         </AuthContext.Provider>
     )
