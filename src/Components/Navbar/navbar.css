@@ -91,15 +91,30 @@
   background: var(--primary-dark-color);
   color: var(--text-white);
 }
-.loginButton {
+.profile-icon {
   margin-left: 2rem;
-  padding: 1.15rem 2rem;
-  font-size: 1.5rem;
-  color: var(--primary-dark-color);
+  margin-right: 3rem;
+  color: var(--primary-color);
+  position: relative;
+}
+
+.userName {
+  font-size: 1.25rem;
+  margin-top: 4rem;
+  position: absolute;
+  margin-left: -6rem;
 }
 .loginButton:hover {
-  color: var(--text-white);
-  background-color: var(--primary-dark-color);
+  color: var(--primary-dark-color);
+}
+#logout-btn {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-right: -3rem;
+  margin-left: 4rem;
+}
+#logoutNotDisplay {
+  display: none;
 }
 #menu-btn {
   display: none;
