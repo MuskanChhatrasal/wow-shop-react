@@ -5,7 +5,7 @@ import './singleProduct.css'
 
 const SingleProduct = ({item}) => {
 
-    const {cartState, cartDispatch} = useFilter()
+    const { cartDispatch} = useFilter()
 
     {/* <!-- IMPORTED FROM MY COMPONENT LIBRARY --> */}
 
@@ -31,7 +31,7 @@ const SingleProduct = ({item}) => {
                             </div>
                         </div>
                         <div className="card-footer">
-                            <button className= {item.availableOrNot ? "button btn-primary card-button" : "button btn-primary card-button btn-disabled"}   onClick={()=>cartDispatch({type: 'ADD_TO_CART', payload: item})}>ADD TO CART</button>
+                            <button className= {item.availableOrNot ? "button btn-primary card-button addToCart-btn" : "button btn-primary card-button btn-disabled"}  onClick={()=>cartDispatch({type: 'ADD_TO_CART', payload: item})}>ADD TO CART</button>
                         </div>
                     </div>
                 </div>

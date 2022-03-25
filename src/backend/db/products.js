@@ -16,7 +16,8 @@ export const products = [
     categoryName: "Italian",
     offer: true,
     rating: 5,
-    imageUrl: 'https://www.sightseeingtoursitaly.com/wp-content/uploads/2019/06/Famous-Italian-dishes.jpg'
+    imageUrl: 'https://www.sightseeingtoursitaly.com/wp-content/uploads/2019/06/Famous-Italian-dishes.jpg',
+    quantity: 1
   },
   {
     _id: uuid(),
@@ -28,7 +29,8 @@ export const products = [
     categoryName: "North-Indian",
     offer: false,
     rating: 5,
-    imageUrl: 'https://imgmedia.lbb.in/media/2020/11/5fa0387bec0d8e30ee455776_1604335739366.jpg'
+    imageUrl: 'https://imgmedia.lbb.in/media/2020/11/5fa0387bec0d8e30ee455776_1604335739366.jpg',
+    quantity: 1
   },
   {
     _id: uuid(),
@@ -40,7 +42,8 @@ export const products = [
     categoryName: "Chineese",
     offer: false,
     rating: 4,
-    imageUrl: 'https://purewows3.imgix.net/images/articles/2021_12/traditional-chinese-food-FB.jpg?auto=format,compress&cs=strip'
+    imageUrl: 'https://purewows3.imgix.net/images/articles/2021_12/traditional-chinese-food-FB.jpg?auto=format,compress&cs=strip',
+    quantity: 1
   },
   {
     _id: uuid(),
@@ -52,7 +55,8 @@ export const products = [
     categoryName: "South-Indian",
     offer: true,
     rating: 4.5,
-    imageUrl: 'https://cdn.5280.com/2020/10/Thali-platter_Bawarchi-Biryani-Point-Denver-Facebook.jpg'
+    imageUrl: 'https://cdn.5280.com/2020/10/Thali-platter_Bawarchi-Biryani-Point-Denver-Facebook.jpg',
+    quantity: 1
   },
   {
     _id: uuid(),
@@ -64,7 +68,8 @@ export const products = [
     categoryName: "Spanish",
     offer: false,
     rating: 2.5,
-    imageUrl: 'https://www.expatica.com/app/uploads/sites/2/2016/09/croquetas.jpg'
+    imageUrl: 'https://www.expatica.com/app/uploads/sites/2/2016/09/croquetas.jpg',
+    quantity: 1
   },
   {
     _id: uuid(),
@@ -76,7 +81,8 @@ export const products = [
     categoryName: "Italian",
     offer: false,
     rating: 3,
-    imageUrl: 'https://www.cookingvdo.com/wp-content/uploads/2017/05/ita.jpg'
+    imageUrl: 'https://www.cookingvdo.com/wp-content/uploads/2017/05/ita.jpg',
+    quantity: 1
   },
   {
     _id: uuid(),
@@ -88,7 +94,8 @@ export const products = [
     categoryName: "Chineese",
     offer: true,
     rating: 3,
-    imageUrl: 'https://c.ndtvimg.com/2018-09/i9993f38_noodles_625x300_26_September_18.jpg'
+    imageUrl: 'https://c.ndtvimg.com/2018-09/i9993f38_noodles_625x300_26_September_18.jpg',
+    quantity: 1
   },
   {
     _id: uuid(),
@@ -100,7 +107,8 @@ export const products = [
     categoryName: "Spanish",
     offer: false,
     rating: 1.5,
-    imageUrl: 'https://nomadparadise.com/wp-content/uploads/2020/04/spanish-foods-004-1024x640.jpg.webp'
+    imageUrl: 'https://nomadparadise.com/wp-content/uploads/2020/04/spanish-foods-004-1024x640.jpg.webp',
+    quantity: 1
   },
   {
     _id: uuid(),
@@ -112,7 +120,8 @@ export const products = [
     categoryName: "North-Indian",
     offer: true,
     rating: 4.5,
-    imageUrl: 'https://www.srigurunalapaka.in/assets/images/2.jpg'
+    imageUrl: 'https://www.srigurunalapaka.in/assets/images/2.jpg',
+    quantity: 1
   },
   {
     _id: uuid(),
@@ -124,7 +133,8 @@ export const products = [
     categoryName: "South-Indian",
     offer: false,
     rating: 3.5,
-    imageUrl: 'https://d4t7t8y8xqo0t.cloudfront.net/admin/eazymedia/trends/3091/16164196070.jpg'
+    imageUrl: 'https://d4t7t8y8xqo0t.cloudfront.net/admin/eazymedia/trends/3091/16164196070.jpg',
+    quantity: 1
   },
   {
     _id: uuid(),
@@ -136,7 +146,8 @@ export const products = [
     categoryName: "Chineese",
     offer: true,
     rating: 4.5,
-    imageUrl: 'https://res.cloudinary.com/purnesh/image/upload/w_1080,f_auto/golden-fiesta-h.jpg'
+    imageUrl: 'https://res.cloudinary.com/purnesh/image/upload/w_1080,f_auto/golden-fiesta-h.jpg',
+    quantity: 1
   },
   {
     _id: uuid(),
@@ -148,6 +159,7 @@ export const products = [
     categoryName: "Italian",
     offer: true,
     rating: 4,
-    imageUrl: 'https://hotgrillburger.com/wp-content/uploads/2021/05/01_0007_VEG-BURGER-COMBO-MEAL-3.jpg'
+    imageUrl: 'https://hotgrillburger.com/wp-content/uploads/2021/05/01_0007_VEG-BURGER-COMBO-MEAL-3.jpg',
+    quantity: 1
   },
 ];
