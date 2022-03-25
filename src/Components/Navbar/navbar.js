@@ -39,7 +39,7 @@ const Navbar = () => {
           <span style={{position: 'absolute', top: -20, right: 0, fontSize: '1.5rem'}}>{cartQuantity}</span>
         </div></Link>
         <Link to='/login'><i className="fas fa-sign-out-alt" id= {loggedIn ? "logout-btn":'logoutNotDisplay'}  style={{position: 'relative'}}>
-          <span style={{position: 'absolute', marginTop: '4rem', marginLeft: '-4rem', fontSize: '1.25rem'}} className='logout-txt'>logOut</span>
+          <span style={{position: 'absolute', marginTop: '4rem', marginLeft: '-4rem', fontSize: '1.25rem'}} onClick={()=>logout()} className='logout-txt'>logout</span>
         </i></Link>
       </div>
     </header>
