@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useFilter } from '../../Context/context'
 import './singleProduct.css'
 
@@ -6,6 +6,7 @@ import './singleProduct.css'
 const SingleProduct = ({item}) => {
 
     const { cartDispatch} = useFilter()
+    const [isWish, setIsWish] = useState(false)
 
     {/* <!-- IMPORTED FROM MY COMPONENT LIBRARY --> */}
 
@@ -14,7 +15,7 @@ const SingleProduct = ({item}) => {
 
             <div  className= {item.availableOrNot ? "card card-ecom mg-1-all":"card card-ecom mg-1-all not-available"} style={{marginTop: '1rem'}} >
                     {!item.availableOrNot && <h3 className='not-availableHead'>Not Available</h3>}
-                    <button class="btn secondary-text-btn-sm card-close"><i class="far fa-heart"></i></button>
+                    <button class="btn secondary-text-btn-sm card-close">{isWish ? <i class="fas fa-heart" onClick={()=>setIsWish(!isWish)}></i>:<i class="far fa-heart" onClick={()=>setIsWish(!isWish)}></i>}</button>
                     <div className="card-img-cont">
                         <img className= {item.availableOrNot ? "card-img" : "card-img not-availableImg" } src={item.imageUrl}
                             alt="veg-momos" />
