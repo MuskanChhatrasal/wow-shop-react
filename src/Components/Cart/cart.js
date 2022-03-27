@@ -3,9 +3,11 @@ import './cart.css'
 import Pizza from '../../assets/s-img-1.jpg'
 import { cartReducer } from '../../Context/reducer'
 import { useFilter } from '../../Context/context'
+import { useAuth } from '../../Context/AuthContext/authContext'
 
 const Cart = () => {
-    const {cartState, cartDispatch} = useFilter();
+    // const {cartState, cartDispatch} = useFilter();
+    const {authState: {cart}} = useAuth();
   return (
     <div className="cart-container">
         <div className="productContainer">
@@ -43,8 +45,30 @@ const Cart = () => {
                             alt="Burger" />
                     </div>
                 </div> */}
+
+                {cart.map((cartItem)=>{
+                    return (
+                        <div class="card card-flex">
+                <div>
+                  <img src={cartItem.imageUrl} className='card-img'></img>
+                  
+                  </div>
+
+                  <span style={{ fontSize: '2rem', marginLeft: '-10rem', fontWeight: 'bold'}}>{cartItem.title}</span>
+                  <p className='price'>₹ {cartItem.priceNew}</p>
+                  <select className='select-quant'>
+                     <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                  <button className="btn secondary-text-btn-sm delete-btn"><i className="fas fa-trash"></i></button>
+                </div>
+                    )
+                })}
             
-                <div class="card card-flex">
+                {/* <div class="card card-flex">
                 <div>
                   <img src={Pizza} className='card-img'></img>
                   
@@ -60,17 +84,17 @@ const Cart = () => {
                     <option>5</option>
                   </select>
                   <button className="btn secondary-text-btn-sm delete-btn"><i className="fas fa-trash"></i></button>
-                </div>
+                </div> */}
                 
             </div>
         </div>
 
-        {cartState.cart.map((it)=>{
+        {/* {cartState.cart.map((it)=>{
             return (
                 <div>{it.title}</div>
             )
         })}
-        
+         */}
 
         <div className="filters summary" style={{marginRight: '2rem'}}>
             <span style={{fontSize: '2rem'}}>Subtotal (3) items</span>
