@@ -17,7 +17,7 @@ export const products = [
     offer: true,
     rating: 5,
     imageUrl: 'https://www.sightseeingtoursitaly.com/wp-content/uploads/2019/06/Famous-Italian-dishes.jpg',
-    quantity: 1
+    qty: 1
   },
   {
     _id: uuid(),

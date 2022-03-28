@@ -37,8 +37,23 @@ const CartProvider = ({children}) =>{
             console.log(error)
         }
     }
+
+    const updateCartQuantity = async(_id, actionType, toastText) =>{
+        try {
+            const response = await axios.post(`/api/user/cart/${_id}`,{
+                action: {
+                    type: actionType
+                }
+            },config)
+            if(response.status === 200){
+                authDispatch({type: "UPDATE_CART", payload:{toastMessage: toastText, data: response.data.cart}})
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
     return ( 
-        <CartContext.Provider value={{addToCart, removeFromCart}}>{children}</CartContext.Provider>
+        <CartContext.Provider value={{addToCart, removeFromCart, updateCartQuantity}}>{children}</CartContext.Provider>
     )
 }
 

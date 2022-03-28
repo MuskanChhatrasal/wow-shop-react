@@ -18,7 +18,9 @@ export const authReducer = (state, action) => {
         
 	    case "REMOVE_FROM_CART":
 			console.log(action.payload.data)
-			return {...state, toastData: {...state.toastData, status: 'removed', display: true, data: action.payload.toastMessage}, cart: action.payload.data}	
+			return {...state, toastData: {...state.toastData, status: 'removed', display: true, data: action.payload.toastMessage}, cart: action.payload.data}
+		case "UPDATE_CART":
+			return {...state, toastData: {...state.toastData, status: 'updated', display: true, data: action.payload.toastMessage}, cart: action.payload.data}		
             default:
 			return state;
 	}

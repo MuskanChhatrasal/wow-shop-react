@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './cart.css'
 import Pizza from '../../assets/s-img-1.jpg'
 import { cartReducer } from '../../Context/reducer'
@@ -9,8 +9,27 @@ import { useCart } from '../../Context/cartContext'
 const Cart = () => {
     // const {cartState, cartDispatch} = useFilter();
     const {authState: {cart}} = useAuth();
-    const {removeFromCart} = useCart();
-    
+    const {removeFromCart, updateCartQuantity} = useCart();
+    const [totalItem, setTotalItem] = useState();
+    const [totalPrice, setTotalPrice] = useState();
+
+    useEffect(()=>{
+        setTotalItem(totalItemQty(cart))
+    }, [cart])
+
+    useEffect(()=>{
+        setTotalPrice(totalItemPrice(cart))
+    },[cart])
+
+    const totalItemQty = (cart) =>{
+        const totalQtyReducer = (acc, curr) => acc+=(curr.qty);
+        return cart.length === 0 ? 0:cart.reduce(totalQtyReducer,0)
+    }
+
+    const totalItemPrice = (cart) =>{
+        const totalPriceReducer = (acc, curr) => acc+=(curr.priceNew)*(curr.qty);
+        return cart.length === 0 ? 0:cart.reduce(totalPriceReducer,0)
+    }
   return (
     <div className="cart-container">
         <div className="productContainer">
@@ -59,13 +78,16 @@ const Cart = () => {
 
                   <span style={{ fontSize: '2rem', marginLeft: '-10rem', fontWeight: 'bold'}}>{cartItem.title}</span>
                   <p className='price'>₹ {cartItem.priceNew}</p>
-                  <select className='select-quant'>
+                  {/* <select className='select-quant'>
                      <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
                     <option>5</option>
-                  </select>
+                  </select> */}
+                  <button className='updateCart-btn' onClick={()=>updateCartQuantity(cartItem._id, 'increment', 'Cart updated')}>+</button>
+                  <span>{cartItem.qty}</span>
+                  <button className='updateCart-btn' onClick={()=>updateCartQuantity(cartItem._id, 'decrement', 'Cart updated')}>-</button>
                   <button className="btn secondary-text-btn-sm delete-btn" onClick={()=>removeFromCart(cartItem._id, 'Removed from Cart')}><i className="fas fa-trash"></i></button>
                 </div>
                     )
@@ -100,8 +122,8 @@ const Cart = () => {
          */}
 
         <div className="filters summary" style={{marginRight: '2rem'}}>
-            <span style={{fontSize: '2rem'}}>Subtotal (3) items</span>
-            <span style={{fontWeight: '700', fontSize: '2rem'}}>Total: ₹666</span>
+            <span style={{fontSize: '2rem'}}>Subtotal ({totalItem}) items</span>
+            <span style={{fontWeight: '700', fontSize: '2rem'}}>Total: ₹{totalPrice}</span>
             <button type="button" className="checkout-btn">Proceed to Checkout</button>
         </div>
 
