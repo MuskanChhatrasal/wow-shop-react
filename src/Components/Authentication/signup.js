@@ -24,7 +24,7 @@ const Signup = () => {
 
   const submitHandler = (e) =>{
       e.preventDefault()
-      const passwordValidation = /^(?=.*\d)(?=.*[a-z]).{5,10}$/;
+    //  const passwordValidation = /^(?=.\d)(?=.[a-z]).{5,}$/;
 
       if(!userDetails.firstName || !userDetails.lastName || !userDetails.email || !userDetails.password || !userDetails.confirmPassword || !userDetails.terms){
          setError({isError: true, text: 'Please Enter all the Fields!!'})
@@ -34,9 +34,9 @@ const Signup = () => {
           setError({isError: true, text: 'Invalid Email-Id'})
       }
 
-      else if(!userDetails.password.match(passwordValidation)){
-          setError({isError: true, text: 'The password must be alphanumberic and atleast 5 characters long!!'})
-      }
+    //   else if(!userDetails.password.match(passwordValidation)){
+    //       setError({isError: true, text: 'The password must be alphanumberic and atleast 5 characters long!!'})
+    //   }
 
       else if(userDetails.password !== userDetails.confirmPassword){
           setError({isError: true, text: 'Password and Confirm Password Not Match!!'})

@@ -26,8 +26,19 @@ const CartProvider = ({children}) =>{
           console.log(error)
       }
     }
-    return (
-        <CartContext.Provider value={{addToCart}}>{children}</CartContext.Provider>
+
+    const removeFromCart = async(_id, toastText) =>{
+        try {
+            const response = await axios.delete(`/api/user/cart/${_id}`,config)
+            if(response.status === 200){
+                authDispatch({type: "REMOVE_FROM_CART", payload:{toastMessage: toastText, data: response.data.cart}})
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    return ( 
+        <CartContext.Provider value={{addToCart, removeFromCart}}>{children}</CartContext.Provider>
     )
 }
 

@@ -4,10 +4,13 @@ import Pizza from '../../assets/s-img-1.jpg'
 import { cartReducer } from '../../Context/reducer'
 import { useFilter } from '../../Context/context'
 import { useAuth } from '../../Context/AuthContext/authContext'
+import { useCart } from '../../Context/cartContext'
 
 const Cart = () => {
     // const {cartState, cartDispatch} = useFilter();
     const {authState: {cart}} = useAuth();
+    const {removeFromCart} = useCart();
+    
   return (
     <div className="cart-container">
         <div className="productContainer">
@@ -63,7 +66,7 @@ const Cart = () => {
                     <option>4</option>
                     <option>5</option>
                   </select>
-                  <button className="btn secondary-text-btn-sm delete-btn"><i className="fas fa-trash"></i></button>
+                  <button className="btn secondary-text-btn-sm delete-btn" onClick={()=>removeFromCart(cartItem._id, 'Removed from Cart')}><i className="fas fa-trash"></i></button>
                 </div>
                     )
                 })}
