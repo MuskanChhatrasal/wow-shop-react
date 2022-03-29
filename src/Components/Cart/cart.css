@@ -17,7 +17,7 @@
   flex-wrap: wrap;
   margin-top: 10rem;
   gap: 3rem;
-  margin-left: -15rem;
+  margin-left: 5rem;
   height: 15rem;
 }
 
@@ -39,7 +39,7 @@
 
 .card-flex {
   display: flex;
-  width: 88rem;
+  width: 78rem;
   justify-content: space-between;
   /* height: 25%; */
   background-color: transparent;
@@ -63,6 +63,7 @@
 .card-img {
   height: 12rem;
   width: 18rem;
+  padding: 1rem 0.5rem;
 }
 
 .img-title {
@@ -100,6 +101,13 @@
 .updateCart-btn {
   padding: 1rem 1rem;
   background-color: var(--primary-dark-color);
-  margin-top: 1rem;
-  height: 4rem;
+  margin-top: 0.25rem;
+  height: 3rem;
+  border-radius: 10%;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.cart-qty {
+  font-size: 2rem;
 }
