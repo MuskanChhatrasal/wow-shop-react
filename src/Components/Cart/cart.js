@@ -9,6 +9,7 @@ const Cart = () => {
     const {authState: {cart}} = useAuth();
   
   return (
+      <>
     <div className="cart-container">
         <div className="productContainer">
             <div className="box-container">
@@ -28,6 +29,7 @@ const Cart = () => {
         
 
     </div>
+    </>
   )
 }
 

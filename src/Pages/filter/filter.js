@@ -9,7 +9,7 @@ const Filter = () => {
 
   return (
    <div className="filters">
-            <span className="title">Filter Products</span>
+            <span className="filter-title">Filter Products</span>
             <span>
                <label style={{fontSize: '1.8rem'}}>Price: </label>
                   <select style={{marginLeft: '1rem', width: '15rem'}} 

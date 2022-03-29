@@ -15,9 +15,9 @@ const CartItem = ({cartItem}) => {
                   <p className='price'>₹ {cartItem.priceNew}</p>
                   
                   <div>
-                     <button className='updateCart-btn' onClick={()=>updateCartQuantity(cartItem._id, 'increment', 'Cart updated')}><span>+</span></button>
+                     <button className='updateCart-btn' onClick={()=>updateCartQuantity(cartItem._id, 'increment', 'Cart updated')}><i class="fas fa-plus"></i></button>
                      <span className='cart-qty'>{cartItem.qty}</span>
-                     <button className='updateCart-btn' onClick={()=>updateCartQuantity(cartItem._id, 'decrement', 'Cart updated')}><span>-</span></button>
+                     <button className='updateCart-btn' onClick={()=>updateCartQuantity(cartItem._id, 'decrement', 'Cart updated')}><i class="fas fa-minus"></i></button>
                   </div>
                   <button className="btn secondary-text-btn-sm delete-btn" onClick={()=>removeFromCart(cartItem._id, 'Removed from Cart')}><i className="fas fa-trash"></i></button>
                 </div>
