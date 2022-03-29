@@ -98,20 +98,3 @@ export default Products
 
 
 
-// import { useState, useEffect } from 'react'
-// import ProductCard from './ProductCard'
-// import axios from 'axios';
-// import "./products.css";
-
-
-// const url = "/api/products";
-// const Products = () => {
-// 	const [products, setProducts] = useState([]);
-
-// 	useEffect(() => {
-// 		axios.get(url).then(res => {
-// 			const { data } = res;
-// 			setProducts(data);
-// 			console.log("response:", data.products)
-// 		})
-// 	}, [])

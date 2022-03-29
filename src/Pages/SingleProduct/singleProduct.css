@@ -11,15 +11,16 @@
 .card-button {
   margin-top: 2rem;
   display: inline-block;
-  padding: 0.8rem 1.4rem;
-  font-size: 1.4rem;
+  padding: 0rem 1.4rem;
+  font-size: 1.5rem !important;
   border-radius: 0.5rem;
   border: 0.2rem solid var(--primary-color);
   cursor: pointer;
   background-color: var(--primary-dark-color);
   color: var(--text-white) !important;
   border: none;
-  margin-left: 0.2rem;
+  margin-left: -1rem;
+  width: 110%;
 }
 
 .card-button:hover {
