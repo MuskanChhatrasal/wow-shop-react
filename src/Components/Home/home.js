@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useFilter } from "../../Context/context";
 import axios from "axios";
+import { useAuth } from "../../Context/AuthContext/authContext";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -15,6 +16,9 @@ const Home = () => {
     setCategories(response.data.categories);
   }, []);
 
+  const {
+    authState: { loggedIn },
+  } = useAuth();
   return (
     <div>
       <section className="home" id="home">
@@ -26,7 +30,15 @@ const Home = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
             libero nostrum veniam facere tempore nisi.
           </p>
-          <a className="btn">shop now</a>
+          {loggedIn ? (
+            <Link to="/products" className="btn">
+              shop now
+            </Link>
+          ) : (
+            <Link to="/login" className="btn">
+              shop now
+            </Link>
+          )}
         </div>
       </section>
 
