@@ -1,0 +1,113 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+
+.cart-container {
+  display: flex;
+}
+
+.productContainer {
+  display: flex;
+  width: 78%;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.productContainer .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10rem;
+  gap: 3rem;
+  margin-left: 8rem;
+  height: 15rem;
+}
+
+.summary {
+  margin-top: 12rem;
+  margin-left: -5rem;
+  width: 25%;
+}
+
+.button {
+  font-size: 2rem;
+  color: var(--primary-dark-color);
+  margin-top: 0.8rem;
+}
+
+.button:hover {
+  color: var(--primary-color);
+}
+
+.card-flex {
+  display: flex;
+  width: 78rem;
+  justify-content: space-between;
+  /* height: 25%; */
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+}
+.select-quant {
+  width: 15rem;
+  height: 2rem;
+}
+.img-flex {
+  height: 15rem;
+  width: 20rem !important;
+  margin-top: -2rem;
+  margin-left: -65rem !important;
+}
+
+.inner-flex {
+  display: flex !important;
+}
+
+.card-img {
+  height: 12rem;
+  width: 18rem;
+  padding: 1rem 0.5rem;
+}
+
+.img-title {
+  margin-top: -2rem !important;
+}
+
+.delete-btn {
+  border: none !important;
+  padding: 0px !important;
+  height: 0;
+  margin-top: 0.5rem;
+}
+.delete-btn:hover {
+  color: var(--primary-dark-color);
+}
+.price {
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.select-quant {
+  margin-top: 0.5rem;
+}
+
+.checkout-btn {
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.checkout-btn:hover {
+  background-color: var(--text-lighter);
+}
+
+.updateCart-btn {
+  padding: 1rem 1rem;
+  background-color: var(--primary-dark-color);
+  margin-top: 0.25rem;
+  height: 3rem;
+  border-radius: 10%;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.cart-qty {
+  font-size: 2rem;
+}

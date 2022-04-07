@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import './navbar.css'
 import { Link } from 'react-router-dom'
-import { useFilter } from '../../Context/context'
 import { useAuth } from '../../Context/AuthContext/authContext'
 
 const Navbar = () => {
-  
-  const {cartState} = useFilter();
-  const [cartQuantity, setCartQuantity] = useState(cartState.cart)
-  const {authState: {userName, loggedIn}, logout } = useAuth();
+
+  const {authState: {userName, loggedIn, cart}, logout } = useAuth();
+  const [cartQuantity, setCartQuantity] = useState(cart.length)
 
   useEffect(()=>{
-    setCartQuantity(cartState.cart.length)
-  }, [cartState.cart])
+    setCartQuantity(cart.length)
+  }, [cart])
 
   return (
     <div>
@@ -23,12 +21,9 @@ const Navbar = () => {
 
       <nav className="navbar">
         <Link to='/'><a>home</a></Link>
-        {/* <a href="#speciality">Offer</a> */}
         <Link to='/products'><a>products</a></Link>
         <Link to='/wishlist'><a>Wishlist</a></Link>
         <Link to='/cart'><a>Cart</a></Link>
-
-        {/* <a href="#home">Login</a> */}
       </nav>
 
       <div className="icons">
@@ -39,7 +34,7 @@ const Navbar = () => {
           <span style={{position: 'absolute', top: -20, right: 0, fontSize: '1.5rem'}}>{cartQuantity}</span>
         </div></Link>
         <Link to='/login'><i className="fas fa-sign-out-alt" id= {loggedIn ? "logout-btn":'logoutNotDisplay'}  style={{position: 'relative'}}>
-          <span style={{position: 'absolute', marginTop: '4rem', marginLeft: '-4rem', fontSize: '1.25rem'}} className='logout-txt'>logOut</span>
+          <span style={{position: 'absolute', marginTop: '4rem', marginLeft: '-4rem', fontSize: '1.25rem'}} onClick={()=>logout()} className='logout-txt'>logout</span>
         </i></Link>
       </div>
     </header>

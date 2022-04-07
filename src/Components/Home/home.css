@@ -3,6 +3,7 @@
 @import url("https://wow-ui02.netlify.app/components/Card.css");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
 
+
 .home {
   display: flex;
   align-items: center;
@@ -54,15 +55,19 @@
 
 .category-card {
   margin: 1.25rem !important;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+     url(../../assets/italian-food.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
-.category-card1 {
+/* .category-card1 {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(../../assets/italian-food.jpg) no-repeat;
   background-position: center;
   background-size: cover;
-}
-.category-card2 {
+} */
+/* .category-card2 {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(../../assets/Chinese_food.jpg) no-repeat;
   background-position: center;
@@ -85,7 +90,7 @@
     url(../../assets/south-indian-food.jpg) no-repeat;
   background-position: center;
   background-size: cover;
-}
+} */
 .category-title {
   text-align: center !important;
   margin-top: 3rem;

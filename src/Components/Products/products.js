@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import './products.css'
-import { products } from '../../backend/db/products'
+// import { products } from '../../backend/db/products'
 import { useFilter } from '../../Context/context'
 import Filter from '../../Pages/filter/filter'
 // import Rating from '../Rating/rating';
@@ -12,7 +13,11 @@ const Products = () => {
 
 const {filterState} = useFilter()
 
-
+	const [products, setProducts] = useState([]);
+	useEffect(async () => {
+		const response = await axios("/api/products");
+		setProducts(response.data.products)
+	}, [])
  
 const updatedProducts = () => {
   let updatedProductList = products;
@@ -93,20 +98,3 @@ export default Products
 
 
 
-// import { useState, useEffect } from 'react'
-// import ProductCard from './ProductCard'
-// import axios from 'axios';
-// import "./products.css";
-
-
-// const url = "/api/products";
-// const Products = () => {
-// 	const [products, setProducts] = useState([]);
-
-// 	useEffect(() => {
-// 		axios.get(url).then(res => {
-// 			const { data } = res;
-// 			setProducts(data);
-// 			console.log("response:", data.products)
-// 		})
-// 	}, [])

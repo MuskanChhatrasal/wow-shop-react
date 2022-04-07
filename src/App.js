@@ -10,6 +10,7 @@ import Mockman from "mockman-js";
 import Login from "./Components/Authentication/login";
 import Signup from "./Components/Authentication/signup";
 import RistrictAuth from "./Pages/ReqRisAuth/RistrictAuth";
+import RequireAuth from "./Pages/ReqRisAuth/RequireAuth";
 
 
 function App() {
@@ -19,13 +20,16 @@ function App() {
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path="/products" element={<Products />} />
-      <Route path="/cart" element={<Cart />} />
-      <Route path="/wishlist" element={<Wishlist />}/>
       <Route path="/mockman" element={<Mockman />} />
       <Route element={<RistrictAuth />}>
         <Route path="/login" element={<Login />}/>
-      <Route path="/signup" element={<Signup />}/>
+        <Route path="/signup" element={<Signup />}/>
       </Route>
+      <Route element={<RequireAuth />}>
+        <Route path="/cart" element={<Cart />}/>
+        <Route path="/wishlist" element={<Wishlist />}/>
+      </Route>
+      
     </Routes>
     <Footer />
     </>
