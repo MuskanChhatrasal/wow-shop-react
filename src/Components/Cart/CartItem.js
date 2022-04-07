@@ -29,7 +29,9 @@ const CartItem = ({ cartItem }) => {
         <button
           className="updateCart-btn"
           onClick={() =>
-            updateCartQuantity(cartItem._id, "decrement", "Cart updated")
+            cartItem.qty <= 1
+              ? removeFromCart(cartItem._id, "Removed from Cart")
+              : updateCartQuantity(cartItem._id, "decrement", "Cart updated")
           }
         >
           <i class="fas fa-minus"></i>
