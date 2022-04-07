@@ -7,15 +7,8 @@ Wow Shop is an E-commerce App built using React, having functionality like produ
 1. Authentication: Login and SignUp functionality.
 2. Private and public routes: Private routes accessible only on login.
 3. Filter products based on category, brand, price, rating.
-4. Search a Product.
-5. User actions like add/remove from cart, toggle wishlist.
-6. Increment/decrement quantity in Cart page.
-7. Total price with quantity shown in the place order section.
-8. React: useContext, useReducer, useEffect, useState, custom hooks, functional components
-9. Mock backend using Mirage JS and Mockman API.
-
- <!-- onClick={() =>
-              cartItem.qty <= 1
-                ? removeFromCart(cartItem._id, "Removed from Cart")
-                : updateCartQuantity(cartItem._id, "decrement", "Cart updated")
-            } -->
+4. User actions like add/remove from cart, toggle wishlist.
+5. Increment/decrement quantity in Cart page.
+6. Total price with quantity shown in the place order section.
+7. React: useContext, useReducer, useEffect, useState, custom hooks, functional components
+8. Mock backend using Mirage JS and Mockman API.
