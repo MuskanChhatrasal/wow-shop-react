@@ -36,52 +36,6 @@ const Home = () => {
         <span>Categories</span>
       </h1>
       <section className="category-section">
-        {/* <div
-          className="card category-card category-card1"
-          onClick={() => {
-            navigate("/products");
-            filterDispatch({ type: "CATEGORY", payload: categoryName });
-          }}
-        >
-          <h3 className="card-title category-title">Italian </h3>
-        </div>
-        <div
-          className="card category-card category-card2"
-          onClick={() => {
-            navigate("/products");
-            filterDispatch({ type: "CATEGORY", payload: categoryName });
-          }}
-        >
-          <h3 className="card-title category-title">Chineese </h3>
-        </div>
-        <div
-          className="card category-card category-card3"
-          onClick={() => {
-            navigate("/products");
-            filterDispatch({ type: "CATEGORY", payload: categoryName });
-          }}
-        >
-          <h3 className="card-title category-title">Spanish </h3>
-        </div>
-        <div
-          className="card category-card category-card4"
-          onClick={() => {
-            navigate("/products");
-            filterDispatch({ type: "CATEGORY", payload: categoryName });
-          }}
-        >
-          <h3 className="card-title category-title">North-Indian </h3>
-        </div>
-        <div
-          className="card category-card category-card5"
-          onClick={() => {
-            navigate("/products");
-            filterDispatch({ type: "CATEGORY", payload: categoryName });
-          }}
-        >
-          <h3 className="card-title category-title">South-Indian </h3>
-        </div> */}
-
         {categories.map((item) => {
           return (
             <div

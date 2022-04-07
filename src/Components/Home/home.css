@@ -61,36 +61,6 @@
   background-size: cover;
 }
 
-/* .category-card1 {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../../assets/italian-food.jpg) no-repeat;
-  background-position: center;
-  background-size: cover;
-} */
-/* .category-card2 {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../../assets/Chinese_food.jpg) no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-.category-card3 {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../../assets/spanish-food.webp) no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-.category-card4 {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../../assets/north-indian-food.jfif) no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-.category-card5 {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../../assets/south-indian-food.jpg) no-repeat;
-  background-position: center;
-  background-size: cover;
-} */
 .category-title {
   text-align: center !important;
   margin-top: 3rem;
