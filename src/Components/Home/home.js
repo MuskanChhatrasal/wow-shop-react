@@ -9,8 +9,6 @@ const Home = () => {
   const navigate = useNavigate();
   const { filterState, filterDispatch } = useFilter();
 
-  // const { imageUrl, categoryName } = item;
-
   const [categories, setCategories] = useState([]);
   useEffect(async () => {
     const response = await axios("/api/categories");
